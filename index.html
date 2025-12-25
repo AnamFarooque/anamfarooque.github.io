@@ -26,71 +26,87 @@
             -webkit-backdrop-filter: blur(18px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 30px;
-            padding: 50px 30px;
+            padding: 40px 20px;
             text-align: center;
             width: 100%;
-            max-width: 500px;
+            max-width: 550px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             animation: float 6s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-12px); }
         }
 
         .profile-pic {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             border: 3px solid rgba(255, 255, 255, 0.8);
-            margin-bottom: 20px;
-            padding: 5px;
-            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            object-fit: cover;
         }
 
         h1 {
             color: #ffffff;
             font-weight: 700;
-            font-size: 2rem;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
         }
 
-        p {
+        p.subtitle {
             color: rgba(255, 255, 255, 0.7);
-            font-weight: 300;
+            font-size: 0.9rem;
             margin-bottom: 35px;
         }
 
-        .icon-row {
+        /* Horizontal Row Setup */
+        .icon-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 65px; /* Keeps everything aligned */
         }
 
         .icon-link {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
+            margin-bottom: 8px;
+        }
+
+        .icon-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
         }
 
         .icon-link:hover {
-            transform: scale(1.2) rotate(10deg);
+            transform: translateY(-5px);
             color: #fff;
-            background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
+
 
           /* Brand Colors on Hover */
         .fb { background-color: #1877F2; }
