@@ -75,53 +75,56 @@
             width: 65px; /* Keeps everything aligned */
         }
 
+        /* --- LIGHTER BEFORE HOVER --- */
         .icon-link {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            /* Light transparent white background */
+            background: rgba(255, 255, 255, 0.08); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            /* Lighter icon color */
+            color: rgba(255, 255, 255, 0.5); 
             font-size: 1.3rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin-bottom: 8px;
         }
 
         .icon-label {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.4); /* Lighter text labels */
+            font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
 
+        /* --- BRIGHT ON HOVER --- */
         .icon-link:hover {
-            transform: translateY(-5px);
-            color: #fff;
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: translateY(-8px) scale(1.15);
+            color: #ffffff; /* Bright white icon on hover */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
-          /* Brand Colors */
-        .fb { background-color: #1877F2; }
-        .ig { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
-        .pf { background-color: #00d2ff; }
-        .yt { background-color: #FF0000; }
-        .gh { background-color: #333; }
-        .go { background-color: #4285F4; }
+        .icon-wrapper:hover .icon-label {
+            color: rgba(255, 255, 255, 1); /* Label brightens up too */
+        }
 
-        /* Hover Colors */
-        .fb:hover { background-color: #1877F2; border-color: #1877F2; }
-        .ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; }
-        .pf:hover { background-color: #00d2ff; border-color: #00d2ff; }
-        .yt:hover { background-color: #FF0000; border-color: #FF0000; }
-        .gh:hover { background-color: #333; border-color: #333; }
-        .go:hover { background-color: #4285F4; border-color: #4285F4; }
-
+        /* Hover Brand Colors */
+        .fb:hover { background-color: #1877F2; }
+        .ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .pf:hover { background-color: #00d2ff; }
+        .yt:hover { background-color: #FF0000; }
+        .fv:hover { background-color: #1dbf73; }
+        .up:hover { background-color: #6fda44; }
+        .gh:hover { background-color: #333; }
+        .go:hover { background-color: #EA4335; }
+        
     </style>
 </head>
 <body>
@@ -134,6 +137,16 @@
 
     <div class="icon-group">
         <div class="icon-wrapper">
+            <a href="#" class="icon-link fv" title="Hire me on Fiverr"><i class="fas fa-bolt"></i></a>
+            <span class="icon-label">Fiverr</span>
+        </div>
+
+        <div class="icon-wrapper">
+            <a href="#" class="icon-link up" title="Hire me on Upwork"><i class="fab fa-upwork"></i></a>
+            <span class="icon-label">Upwork</span>
+        </div>
+        
+        <div class="icon-wrapper">
             <a href="https://www.facebook.com/Anam.Arain07" class="icon-link fb" title="Visit my Facebook"><i class="fab fa-facebook-f"></i></a>
             <span class="icon-label">FB</span>
         </div>
@@ -145,12 +158,12 @@
 
         <div class="icon-wrapper">
             <a href="https://anamdevtech.netlify.app/" class="icon-link pf" title="View my Work"><i class="fas fa-briefcase"></i></a>
-            <span class="icon-label">Work</span>
+            <span class="icon-label">Portfolio</span>
         </div>
 
         <div class="icon-wrapper">
             <a href="https://www.youtube.com/channel/UCeibpbTVfBKZViKB4qfxLwA" class="icon-link yt" title="Subscribe on YouTube"><i class="fab fa-youtube"></i></a>
-            <span class="icon-label">Video</span>
+            <span class="icon-label">Youtube</span>
         </div>
 
         <div class="icon-wrapper">
