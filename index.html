@@ -115,26 +115,25 @@
             color: rgba(255, 255, 255, 1); /* Label brightens up too */
         }
 
-        /* --- COLORS BEFORE HOVER (Light Opacity) --- */
-        /* Each brand gets a 30% transparent color by default */
-        .fb { background: rgba(24, 119, 242, 0.3); }
-        .ig { background: rgba(228, 64, 95, 0.3); }
-        .pf { background: rgba(0, 210, 255, 0.3); }
-        .yt { background: rgba(255, 0, 0, 0.3); }
-        .fv { background: rgba(29, 191, 115, 0.3); }
-        .up { background: rgba(111, 218, 68, 0.3); }
-        .gh { background: rgba(51, 51, 51, 0.3); }
-        .go { background: rgba(234, 67, 53, 0.3); }
+       /* --- VISIBLE COLORS BEFORE HOVER (Increased Opacity to 0.55) --- */
+        .fb { background: rgba(24, 119, 242, 0.55); }
+        .ig { background: rgba(228, 64, 95, 0.55); }
+        .pf { background: rgba(0, 210, 255, 0.55); }
+        .yt { background: rgba(255, 0, 0, 0.55); }
+        .fv { background: rgba(29, 191, 115, 0.55); }
+        .up { background: rgba(111, 218, 68, 0.55); }
+        .gh { background: rgba(51, 51, 51, 0.55); }
+        .go { background: rgba(234, 67, 53, 0.55); }
 
-        /* Hover Brand Colors */
-        .fb:hover { background-color: #1877F2; }
+        /* --- SOLID COLORS ON HOVER --- */
+        .fb:hover { background: rgba(24, 119, 242, 1); }
         .ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .pf:hover { background-color: #00d2ff; }
-        .yt:hover { background-color: #FF0000; }
-        .fv:hover { background-color: #1dbf73; }
-        .up:hover { background-color: #6fda44; }
-        .gh:hover { background-color: #333; }
-        .go:hover { background-color: #EA4335; }
+        .pf:hover { background: rgba(0, 210, 255, 1); }
+        .yt:hover { background: rgba(255, 0, 0, 1); }
+        .fv:hover { background: rgba(29, 191, 115, 1); }
+        .up:hover { background: rgba(111, 218, 68, 1); }
+        .gh:hover { background: rgba(51, 51, 51, 1); }
+        .go:hover { background: rgba(234, 67, 53, 1); }
         
     </style>
 </head>
@@ -148,12 +147,12 @@
 
     <div class="icon-group">
         <div class="icon-wrapper">
-            <a href="#" class="icon-link fv" title="Hire me on Fiverr"><i class="fas fa-bolt"></i></a>
+            <a href="#" class="icon-link fv" title="Hire me on Fiverr"><i class="fa-solid fa-bolt"></i></a>
             <span class="icon-label">Fiverr</span>
         </div>
 
         <div class="icon-wrapper">
-            <a href="#" class="icon-link up" title="Hire me on Upwork"><i class="fab fa-upwork"></i></a>
+            <a href="#" class="icon-link up" title="Hire me on Upwork"><i class="fa-brands fa-upwork"></i></a>
             <span class="icon-label">Upwork</span>
         </div>
         
