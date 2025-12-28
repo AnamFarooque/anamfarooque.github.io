@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anam Farooque | Snow Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --snow-white: #f8fafc;
+            --ice-blue: #e0f2fe;
+            --accent-blue: #38bdf8;
+            --text-main: #1e293b;
+            --glass: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--snow-white);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background: linear-gradient(rgba(166, 190, 243, 0.5), rgba(210, 244, 245, 0.5)), url('pic/beautifulwinterscenery.jpg') no-repeat center center fixed;
+            background-size: cover;
+           
+        }
+
+        /* Snowflake Animation */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            user-select: none;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh); }
+        }
+
+        /* Navigation with Profile Pic */
+        .navbar {
+            backdrop-filter: blur(15px);
+            background: var(--glass);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.8rem 0;
+        }
+
+        .profile-pic {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            object-fit: cover;
+        }
+
+        .profile-pic:hover {
+            transform: rotate(360deg) scale(1.2);
+            border-color: var(--accent-blue);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--text-main) !important;
+            letter-spacing: -1px;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(180deg, var(--ice-blue) 0%, var(--snow-white) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        /* Modern Project Gallery */
+        .project-card {
+            background: white;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(148, 163, 184, 0.1);
+            transition: 0.4s;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+        }
+
+        .project-img-box {
+            height: 200px;
+            background: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        /* Skill Pills */
+        .skill-pill {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin: 5px;
+            display: inline-block;
+            font-weight: 500;
+            color: #64748b;
+            transition: 0.3s;
+        }
+
+        .skill-pill:hover {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+            transform: scale(1.05);
+        }
+
+      /* --- Prominent Snow Animation --- */
+        .snowflake {
+            position: fixed;
+            top: -20px;
+            color: white;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 3px rgba(0,0,0,0.1));
+        }
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+
+        /* --- Social Section Styling --- */
+        .social-container {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 50px 50px 0 0;
+        }
+
+        /* Wrapper for each icon + text pair */
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: var(--ice-blue);
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            transition: 0.3s;
+            margin-bottom: 8px; /* Space between icon and text */
+        }
+
+        .social-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 1px;
+        }
+
+        .social-item:hover .social-icon {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .social-item:hover .social-label {
+            color: var(--accent-blue);
+        }
+        .fiverr-icon:hover { background: #1dbf73; }
+        .upwork-icon:hover { background: #37a000; }
+        .yt-icon:hover { background: #ff0000; }
+        .ig-icon:hover { background: #e1306c; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <img src="pic/profilepic.jpeg" alt="Anam" class="profile-pic me-3">
+                <a class="navbar-brand" href="#">Anam<span style="color:var(--accent-blue)">.</span></a>
+            </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fw-bold px-3" href="#home">Intro</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold px-3" href="#skills">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold px-3" href="#projects">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold px-3" href="#social">Connect</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <span class="badge rounded-pill px-4 py-2 mb-3" style="background: white; color: var(--accent-blue); border: 1px solid var(--accent-blue)">FULL STACK .NET DEVELOPER</span>
+            <h1>Anam Farooque</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                5+ years of experience building high-performance ERP systems and enterprise platforms with a passion for clean code and modern UI.
+            </p>
+        </div>
+    </header>
+
+    <section id="skills" class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">Technical Mastery</h2>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="skill-pill">ASP.NET Core</div>
+                <div class="skill-pill">React.js</div>
+                <div class="skill-pill">C# / VB.NET</div>
+                <div class="skill-pill">Entity Framework</div>
+                <div class="skill-pill">Microservices</div>
+                <div class="skill-pill">SQL Server</div>
+                <div class="skill-pill">AWS Cloud</div>
+                <div class="skill-pill">Bootstrap 5</div>
+                <div class="skill-pill">WPF / XAML</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold mb-5 text-center">Project Gallery</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="project-card p-3">
+                        <div class="project-img-box rounded-4 mb-3">
+                            <img src="https://images.unsplash.com/photo-1554224155-1696413575b3?auto=format&fit=crop&w=500" alt="Namipay">
+                        </div>
+                        <h5 class="fw-bold">Namipay Solutions</h5>
+                        <p class="small text-muted">A massive fintech platform processing 2.39B+ transactions across Saudi Arabia.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">View Link</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card p-3">
+                        <div class="project-img-box rounded-4 mb-3">
+                            <img src="https://images.unsplash.com/photo-1551288049-bbb6532b6b4d?auto=format&fit=crop&w=500" alt="WASA">
+                        </div>
+                        <h5 class="fw-bold">WASA Billing ERP</h5>
+                        <p class="small text-muted">Complete recovery & billing system built using VB.NET and RDLC Reports.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">View Case</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card p-3">
+                        <div class="project-img-box rounded-4 mb-3">
+                            <img src="https://images.unsplash.com/photo-1576181256391-99b244243111?auto=format&fit=crop&w=500" alt="CMS">
+                        </div>
+                        <h5 class="fw-bold">CMS Platform 4.0</h5>
+                        <p class="small text-muted">Camera monitoring system with employee compliance tracking via DVR integration.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">Details</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-card p-3">
+                        <div class="project-img-box rounded-4 mb-3">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500" alt="Jewelry">
+                        </div>
+                        <h5 class="fw-bold">Jewelry E-Commerce</h5>
+                        <p class="small text-muted">Responsive web shop that reduced checkout abandonment by 15%.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="social" class="social-container text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-4">Let's Build Something Great</h2>
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="#" class="social-item fiverr-item">
+                    <div class="social-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <span class="social-label">Fiverr</span>
+                </a>
+
+                <a href="#" class="social-item upwork-item">
+                    <div class="social-icon"><i class="fa-brands fa-upwork"></i></div>
+                    <span class="social-label">Upwork</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/anam-arain-07/" class="social-item li-item">
+                    <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <span class="social-label">LinkedIn</span>
+                </a>
+
+                <a href="https://github.com/AnamFarooque" class="social-item">
+                    <div class="social-icon"><i class="fa-brands fa-github"></i></div>
+                    <span class="social-label">GitHub</span>
+                </a>
+
+                <a href="#" class="social-item yt-item">
+                    <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <span class="social-label">YouTube</span>
+                </a>
+
+                <a href="#" class="social-item ig-item">
+                    <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <span class="social-label">Instagram</span>
+                </a>
+            </div>
+
+            <p class="mt-5 text-muted small">© 2025 Anam Farooque | Hyderabad, Pakistan | PEC Registered</p>
+        
+        </div>
+    </section>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            const shapes = ['❄', '❅', '❆', '•'];
+            snowflake.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+            snowflake.classList.add('snowflake');
+            
+            // Randomize properties for "Prominent" look
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 4 + 's'; // Slower, more visible fall
+            snowflake.style.opacity = Math.random() * 0.7 + 0.3; // Minimum 30% opacity
+            snowflake.style.fontSize = Math.random() * 15 + 15 + 'px'; // Larger flakes (15px-30px)
+            
+            document.body.appendChild(snowflake);
+            
+            setTimeout(() => { snowflake.remove(); }, 6000);
+        }
+        
+        // Faster interval (100ms) makes the snow much more prominent
+        setInterval(createSnowflake, 100);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
