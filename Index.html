@@ -19,6 +19,30 @@
             justify-content: center;
             font-family: 'Inter', sans-serif;
         }
+        /* --- TOP LEFT NAME STYLE --- */
+        .top-left-name {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .top-left-name span {
+            width: 8px;
+            height: 8px;
+            background: #00ffd5; /* Accent dot */
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #00ffd5;
+        }
 
         .glass-container {
             background: rgba(255, 255, 255, 0.07);
@@ -111,7 +135,9 @@
     </style>
 </head>
 <body>
-
+<div class="top-left-name">
+    <span></span> Anam Farooque
+</div>
 <div class="glass-container">
     <img src="profilepic.jpeg" alt="User Avatar" class="profile-pic">
     
@@ -129,4 +155,5 @@
 </div>
 
 </body>
+
 </html>
