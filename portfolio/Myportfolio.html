@@ -205,6 +205,16 @@
         .upwork-icon:hover { background: #37a000; }
         .yt-icon:hover { background: #ff0000; }
         .ig-icon:hover { background: #e1306c; }
+
+        .project-zoom {
+        transition: transform 0.3s ease;
+    }
+    .project-zoom:hover {
+        transform: scale(1.05);
+    }
+    #imageModal .modal-content {
+        backdrop-filter: blur(5px); /* Frosty effect for the modal background */
+    }
     </style>
 </head>
 <body>
@@ -294,47 +304,24 @@
     <div class="container">
         <h2 class="fw-bold mb-5 text-center">Project Gallery</h2>
         <div class="row g-4">
-            <div class="col-md-4">
+           <div class="col-md-4">
                 <div class="project-card p-3">
                     <div class="project-img-box rounded-4 mb-3">
-                        <img src="pic/CSVAIProject.png" alt="ML.NET Project">
+                        <img src="pic/InvoiceDataExtractor.png" 
+                             alt="ERP Integration" 
+                             class="img-fluid project-zoom" 
+                             style="cursor: pointer;"
+                             data-bs-toggle="modal" 
+                             data-bs-target="#imageModal"
+                             onclick="showImage(this.src, 'Invoice Data Extractor')">
                     </div>
-                    <div class="mb-2">
-                        <span class="badge bg-info text-dark">ML.NET</span>
-                        <span class="badge bg-secondary">C#</span>
-                    </div>
-                    <h5 class="fw-bold">Smart CSV Categorizer</h5>
-                    <p class="small text-muted">A machine learning tool that automates data classification by training a custom "brain" (model) to process raw CSV data into structured categories.</p>
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">View Process</a>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="project-card p-3">
-                    <div class="project-img-box rounded-4 mb-3">
-                        <img src="pic/AIChatBotProject.png" alt="NL2SQL Project">
-                    </div>
-                    <div class="mb-2">
-                        <span class="badge bg-primary">NL2SQL</span>
-                        <span class="badge bg-dark">SQL Security</span>
-                    </div>
-                    <h5 class="fw-bold">AI Chatbot for SQL</h5>
-                    <p class="small text-muted">A secure "Natural Language to SQL" translator that allows users to query databases using plain English without direct DB access.</p>
-                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">Security Flow</a>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="project-card p-3">
-                    <div class="project-img-box rounded-4 mb-3">
-                        <img src="pic/InvoiceDataExtractor.png" alt="ERP Integration">
-                    </div>
+                    
                     <div class="mb-2">
                         <span class="badge bg-success">OCR</span>
                         <span class="badge bg-warning text-dark">ERP Auto</span>
                     </div>
                     <h5 class="fw-bold">Invoice Extractor</h5>
-                    <p class="small text-muted">Automated pipeline that extracts data from PDF invoices and populates SQL databases or Excel, eliminating manual entry for ERP systems.</p>
+                    <p class="small text-muted">Automated pipeline that extracts data from PDF invoices and populates SQL databases, eliminating manual entry for ERP systems.</p>
                     <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">Automation Path</a>
                 </div>
             </div>
@@ -342,8 +329,15 @@
             <div class="col-md-4">
                 <div class="project-card p-3">
                     <div class="project-img-box rounded-4 mb-3">
-                        <img src="pic/SmartERPArchitecture.png" alt="ERP Architecture">
+                        <img src="pic/SmartERPArchitecture.png" 
+                             alt="ERP Architecture" 
+                             class="img-fluid project-zoom" 
+                             style="cursor: pointer;"
+                             data-bs-toggle="modal" 
+                             data-bs-target="#imageModal"
+                             onclick="showImage(this.src, 'Intelligent ERP Architecture')">
                     </div>
+                    
                     <div class="mb-2">
                         <span class="badge bg-danger">Architecture</span>
                         <span class="badge bg-info text-dark">Cloud AI</span>
@@ -357,29 +351,89 @@
             <div class="col-md-4">
                 <div class="project-card p-3">
                     <div class="project-img-box rounded-4 mb-3">
-                        <img src="pic/Namipay.jfif" alt="Namipay">
+                        <img src="pic/Namipay.jfif" 
+                             alt="Namipay" 
+                             class="img-fluid project-zoom" 
+                             style="cursor: pointer;"
+                             data-bs-toggle="modal" 
+                             data-bs-target="#imageModal"
+                             onclick="showImage(this.src, 'Namipay Solutions')">
                     </div>
-                    <div class="mb-2"><span class="badge bg-primary">Fintech</span></div>
+                    <div class="mb-2">
+                        <span class="badge bg-primary">Fintech</span>
+                        <span class="badge bg-dark">ASP.NET Core</span>
+                    </div>
                     <h5 class="fw-bold">Namipay Solutions</h5>
-                    <p class="small text-muted">A massive fintech platform processing 2.39B+ transactions across Saudi Arabia.</p>
-                    <a href="https://www.linkedin.com/company/namipaysa/" class="btn btn-sm btn-outline-primary rounded-pill">View Link</a>
+                    <p class="small text-muted">A massive fintech platform processing 2.39B+ transactions across Saudi Arabia with high availability.</p>
+                    <a href="https://www.linkedin.com/company/namipaysa/" class="btn btn-sm btn-outline-primary rounded-pill">View Company</a>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="project-card p-3">
                     <div class="project-img-box rounded-4 mb-3">
-                        <img src="pic/WASA.png" alt="WASA">
+                        <img src="pic/WASA.png" 
+                             alt="WASA" 
+                             class="img-fluid project-zoom" 
+                             style="cursor: pointer;"
+                             data-bs-toggle="modal" 
+                             data-bs-target="#imageModal"
+                             onclick="showImage(this.src, 'WASA Billing ERP')">
                     </div>
-                    <div class="mb-2"><span class="badge bg-primary">VB.NET</span></div>
+                    <div class="mb-2">
+                        <span class="badge bg-primary">VB.NET</span>
+                        <span class="badge bg-secondary">RDLC Reports</span>
+                    </div>
                     <h5 class="fw-bold">WASA Billing ERP</h5>
-                    <p class="small text-muted">Complete recovery & billing system built using VB.NET and RDLC Reports.</p>
+                    <p class="small text-muted">Complete recovery & billing system built to manage government utility data and complex reporting.</p>
                     <a href="https://wasahyd.com.pk/" class="btn btn-sm btn-outline-primary rounded-pill">View Case</a>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="project-card p-3">
+                    <div class="project-img-box rounded-4 mb-3">
+                        <img src="pic/CSVAIProject.png" 
+                             alt="ML.NET Project" 
+                             class="img-fluid project-zoom" 
+                             style="cursor: pointer;"
+                             data-bs-toggle="modal" 
+                             data-bs-target="#imageModal"
+                             onclick="showImage(this.src, 'Smart CSV Categorizer')">
+                    </div>
+                    <div class="mb-2">
+                        <span class="badge bg-info text-dark">ML.NET</span>
+                        <span class="badge bg-secondary">C#</span>
+                    </div>
+                    <h5 class="fw-bold">Smart CSV Categorizer</h5>
+                    <p class="small text-muted">A machine learning tool that automates data classification...</p>
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">View Process</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card p-3">
+                    <div class="project-img-box rounded-4 mb-3">
+                        <img src="pic/AIChatBotProject.png" alt="NL2SQL Project" 
+                             class="img-fluid project-zoom" style="cursor: pointer;"
+                             data-bs-toggle="modal" data-bs-target="#imageModal"
+                             onclick="showImage(this.src, 'AI Chatbot for SQL')">
+                    </div>
+                    <div class="mb-2">
+                        <span class="badge bg-primary">NL2SQL</span>
+                    </div>
+                    <h5 class="fw-bold">AI Chatbot for SQL</h5>
+                    <p class="small text-muted">A secure "Natural Language to SQL" translator...</p>
+                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">Security Flow</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
+
+
+
 
     <section id="social" class="social-container text-center">
         <div class="container">
@@ -421,6 +475,20 @@
         </div>
     </section>
 
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="modalTitle">Project Preview</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0 text-center">
+                <img src="" id="modalImage" class="img-fluid rounded-4 shadow-lg" alt="Preview">
+            </div>
+        </div>
+    </div>
+</div>
+
     <script>
         function createSnowflake() {
             const snowflake = document.createElement('div');
@@ -441,6 +509,11 @@
         
         // Faster interval (100ms) makes the snow much more prominent
         setInterval(createSnowflake, 100);
+
+        function showImage(src, title) {
+        document.getElementById('modalImage').src = src;
+        document.getElementById('modalTitle').innerText = title;
+    }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
